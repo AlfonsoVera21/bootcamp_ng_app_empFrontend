@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CompaniaService } from '../compania.service';
 
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
   styleUrls: ['./listado.component.css']
 })
-export class ListadoComponent {
+export class ListadoComponent implements OnInit{
 
+  displayedColumns:string[] =['id','nombreCompania','direccion','telefono','telefono2'];
+
+  constructor(private companiaService:CompaniaService) {}
+  ngOnInit(): void{
+    this.companiaService.listarCompania();
+  }
+  get resultados(){
+    return this.companiaService.resultado;
+  }
 }

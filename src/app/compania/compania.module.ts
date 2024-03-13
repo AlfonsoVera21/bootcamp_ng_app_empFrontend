@@ -6,6 +6,8 @@ import { EditarComponent } from './editar/editar.component';
 import { EliminarComponent } from './eliminar/eliminar.component';
 import { HomeComponent } from './home/home.component';
 import { CompaniaRoutingModule } from './compania-routing.module';
+import { MaterialModule } from '../material/material.module';
+import { CompaniaService } from './compania.service';
 
 
 
@@ -19,10 +21,14 @@ import { CompaniaRoutingModule } from './compania-routing.module';
   ],
   imports: [
     CommonModule,
-    CompaniaRoutingModule
+    CompaniaRoutingModule,
+    MaterialModule
   ],
   exports:[
     CompaniaRoutingModule
+  ],
+  providers:[
+    CompaniaService
   ]
 })
 export class CompaniaModule { }
