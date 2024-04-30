@@ -5,6 +5,7 @@ import { HomeComponent } from './compartido/home/home.component';
 const routes: Routes = [
   {path:'', component: HomeComponent,pathMatch:'full'},
   {path:'compania', loadChildren:()=> import('./compania/compania.module').then(m => m.CompaniaModule)},
+  {path:'empleado',loadChildren:()=>import('./empleado/empleado.module').then(m=>m.EmpleadoModule)},
   {path:'**', redirectTo:''}
 ];
 
